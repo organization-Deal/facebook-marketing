@@ -1,1 +1,96 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketing Intelligence</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">FACEBOOK MARKETING INTELLIGENCE</div>
+        <h1>Content → Chat → Lead → Revenue</h1>
+        <p>Dashboard ตัวอย่างสำหรับดูว่าลูกค้าทักจากไหน พูดเรื่องอะไร และคอนเทนต์ไหนสร้างยอดขายจริง</p>
+      </div>
+      <div class="actions">
+        <button id="seedBtn" class="primary">ใส่ข้อมูล Demo</button>
+        <button id="refreshBtn">รีเฟรช</button>
+      </div>
+    </header>
 
+    <section id="notice" class="notice hidden"></section>
+
+    <section class="cards" id="summaryCards">
+      <article class="card"><span>Chats</span><strong id="chats">0</strong></article>
+      <article class="card"><span>Leads</span><strong id="leads">0</strong></article>
+      <article class="card"><span>Qualified</span><strong id="qualified">0</strong></article>
+      <article class="card"><span>Closed</span><strong id="closed">0</strong></article>
+      <article class="card"><span>Lead → Close</span><strong id="conversion">0%</strong></article>
+      <article class="card accent"><span>Revenue</span><strong id="revenue">฿0</strong></article>
+    </section>
+
+    <section class="grid-two">
+      <article class="panel">
+        <div class="panel-title">
+          <div>
+            <span class="eyebrow">CONTENT PERFORMANCE</span>
+            <h2>คอนเทนต์ที่สร้างผลลัพธ์</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Content</th><th>Reach</th><th>Chats</th><th>Closed</th><th>Revenue</th></tr>
+            </thead>
+            <tbody id="contentRows"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title">
+          <div>
+            <span class="eyebrow">CUSTOMER LANGUAGE</span>
+            <h2>Top Keywords</h2>
+          </div>
+        </div>
+        <div id="keywordList" class="keyword-list"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title split">
+        <div>
+          <span class="eyebrow">RECENT MESSAGES</span>
+          <h2>ข้อความล่าสุด</h2>
+        </div>
+        <span class="muted">AI ใน V1 เป็น rule-based เพื่อให้รันได้โดยไม่ต้องมี API key</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ข้อความ</th><th>Source</th><th>Intent</th><th>Product</th><th>Lead Score</th><th>Status</th></tr>
+          </thead>
+          <tbody id="messageRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel simulator">
+      <div>
+        <span class="eyebrow">SIMULATE WEBHOOK</span>
+        <h2>ลองส่งข้อความลูกค้าเข้าเอง</h2>
+        <p class="muted">ใช้ทดสอบ flow ก่อนมี Meta API จริง</p>
+      </div>
+      <form id="mockForm">
+        <input id="mockText" value="สนใจลงทุนตู้ชกมวย 50,000 บาท มีที่เชียงใหม่ไหม คืนทุนกี่เดือน" />
+        <input id="mockRef" value="FB_REEL_BOXING_001" placeholder="Content ref" />
+        <button class="primary" type="submit">ส่ง Mock Event</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
